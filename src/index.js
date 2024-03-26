@@ -5,6 +5,7 @@ import App from "./App";
 import { UserProvider } from "./context/user.context";
 import "./index.scss";
 import { ProductsProvider } from "./context/products.context";
+import { CardProvider, CartProvider } from "./context/cart.context";
 
 const rootElement = document.getElementById("root");
 
@@ -13,7 +14,9 @@ render(
     <BrowserRouter>
       <UserProvider>
         <ProductsProvider>
-          <App />
+          <CartProvider>
+            <App />
+          </CartProvider>
         </ProductsProvider>
       </UserProvider>
     </BrowserRouter>
